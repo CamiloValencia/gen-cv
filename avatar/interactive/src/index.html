@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Trailblazers Outdoor Gear</title>
+  <title>Estrategia Digital CT+I</title>
 
   <link href="./css/styles.css" rel="stylesheet" />
 
@@ -12,6 +12,11 @@
 
   <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+  <link rel="icon" type="image/x-icon" href="https://www.ecopetrol.com.co/wps/contenthandler/dav/themelist/eco-tema-principal1/images/favico.ico">
+  <link rel="icon" type="image/x-icon" href="https://www.ecopetrol.com.co/wps/contenthandler/dav/themelist/eco-tema-principal1/images/favicon-16x16.ico" sizes="16x16">
+  <link  rel="icon" type="image/x-icon" href="https://www.ecopetrol.com.co/wps/contenthandler/dav/themelist/eco-tema-principal1/images/favicon-32x32.ico" sizes="32x32">
+  <link rel="icon" type="image/x-icon" href="https://www.ecopetrol.com.co/wps/contenthandler/dav/themelist/eco-tema-principal1/images/favicon-48x48.ico" sizes="48x48">
 </head>
 
 <body>
@@ -52,8 +57,8 @@
     <div class="avatar-block">
       <div id="remoteVideo">
       </div>
-      <canvas id="canvas" width="720" height="1080" style="background-color: transparent;" hidden="hidden"></canvas>
-      <canvas id="tmpCanvas" width="720" height="1080" hidden="hidden"></canvas>
+      <canvas id="canvas" width="720" height="1080" style="background-color: transparent;"></canvas>
+      <canvas id="tmpCanvas" width="720" height="1080"></canvas>
       
       <fluent-card class="record-card">
         <div class="outerbutton">
@@ -70,21 +75,6 @@
 
     <div class="main-block">
       <ul id="chathistory" class="chat-history"></ul>
-    </div>
-  </div>
-
-  <div id="loginOverlay">
-    <div id="gradientOverlay">
-      <div class="loginCard">
-        <div class="loginCard__header">Login</div>
-
-        <fluent-text-field appearance="outline" placeholder="user@email.com">Username</fluent-text-field>
-        <fluent-text-field appearance="outline" placeholder="****************">Password</fluent-text-field>
-
-        <button id="playVideo" onclick="window.startSession()">
-          <span id="playVideo__text" class="playVideo__text">Login</span>
-        </button>
-      </div>
     </div>
   </div>
 </body>
