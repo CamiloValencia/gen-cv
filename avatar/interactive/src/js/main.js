@@ -23,7 +23,7 @@ let IceServerCredential
 const TalkingAvatarCharacter = "meg"
 const TalkingAvatarStyle = "formal"
 
-supported_languages = ["es-CO", "en-US"] // The language detection engine supports a maximum of 4 languages
+supported_languages = ["en-US", "es-CO"] // The language detection engine supports a maximum of 4 languages
 
 let token
 
@@ -170,7 +170,6 @@ function connectToAvatarService() {
 
   const avatarConfig = new SpeechSDK.AvatarConfig(TalkingAvatarCharacter, TalkingAvatarStyle, videoFormat)
   avatarConfig.backgroundColor = backgroundColor
-  avatarConfig.c
 
   avatarSynthesizer = new SpeechSDK.AvatarSynthesizer(speechSynthesisConfig, avatarConfig)
   avatarSynthesizer.avatarEventReceived = function (s, e) {
