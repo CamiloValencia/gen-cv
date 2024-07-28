@@ -12,7 +12,7 @@ var system_prompt = `You are an AI assistant focused on delivering brief product
 - Pay attention to the language the customer is using in their latest statement and respond in the same language!
 `
 
-const TTSVoice = "en-US-JennyMultilingualNeural" // Update this value if you want to use a different voice
+const TTSVoice = "es-CO-SalomeNeural" // Update this value if you want to use a different voice
 
 const CogSvcRegion = "southcentralus" // Fill your Azure cognitive services region here, e.g. westus2
 
@@ -20,10 +20,10 @@ const IceServerUrl = "turn:relay.communication.microsoft.com:3478" // Fill your 
 let IceServerUsername
 let IceServerCredential
 
-const TalkingAvatarCharacter = "lisa"
-const TalkingAvatarStyle = "casual-sitting"
+const TalkingAvatarCharacter = "meg"
+const TalkingAvatarStyle = "formal"
 
-supported_languages = ["en-US", "de-DE", "zh-CN", "ar-AE"] // The language detection engine supports a maximum of 4 languages
+supported_languages = ["es-CO", "en-US"] // The language detection engine supports a maximum of 4 languages
 
 let token
 
@@ -170,6 +170,7 @@ function connectToAvatarService() {
 
   const avatarConfig = new SpeechSDK.AvatarConfig(TalkingAvatarCharacter, TalkingAvatarStyle, videoFormat)
   avatarConfig.backgroundColor = backgroundColor
+  avatarConfig.c
 
   avatarSynthesizer = new SpeechSDK.AvatarSynthesizer(speechSynthesisConfig, avatarConfig)
   avatarSynthesizer.avatarEventReceived = function (s, e) {
