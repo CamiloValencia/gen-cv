@@ -286,14 +286,7 @@ function connectToAvatarService() {
 }
 
 window.startSession = () => {
-  var iconElement = document.createElement("i");
-  iconElement.className = "fa fa-spinner fa-spin";
-  iconElement.id = "loadingIcon"
-  var parentElement = document.getElementById("playVideo");
-  parentElement.prepend(iconElement);
-
   speechSynthesisConfig.speechSynthesisVoiceName = TTSVoice
-  document.getElementById('playVideo').className = "round-button-hide"
 
   fetch("/api/getSpeechToken", {
     method: "POST"
