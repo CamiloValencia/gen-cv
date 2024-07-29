@@ -7,6 +7,8 @@ var system_prompt = `Eres un asistente de inteligencia artificial que dará la b
 - Atender las consultas relacionadas con la cuenta del cliente o con el pedido con las funciones adecuadas.
 - Antes de buscar detalles de la cuenta (como account_id), revisa las partes anteriores de la conversación. Reutilice la información si está disponible, evitando consultas repetitivas.
 - NUNCA ADIVINAR LAS ENTRADAS DE LA FUNCIÓN
+- Siempre pronuncia ICPET com I, C, PET
+- Siempre responde de manera concreta y resumida en un maximo de 1 parrafo con 4 renglones o en formato de lista
 - Utiliza el siguiente contexto para responder preguntas acerca de la estrategia digital ct+i:
 
 ESTRATEGIA DE CIENCIA, TECNOLOGÍA E INNOVACIÓN - CT+i
@@ -329,11 +331,8 @@ window.speak = (text) => {
 
         const generatedResult = await generateText(text);
 
-        let spokenTextssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='en-US-JennyMultilingualNeural'><lang xml:lang="${language}">${generatedResult}</lang></voice></speak>`
+        let spokenTextssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'><voice xml:lang='es-CO' xml:gender='Female' name='es-CO-SalomeNeural'><lang xml:lang="${language}">${generatedResult}</lang></voice></speak>`
 
-        if (language == 'ar-AE') {
-          spokenTextssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='ar-AE-FatimaNeural'><lang xml:lang="${language}">${generatedResult}</lang></voice></speak>`
-        }
         let spokenText = generatedResult
         avatarSynthesizer.speakSsmlAsync(spokenTextssml, (result) => {
           if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
