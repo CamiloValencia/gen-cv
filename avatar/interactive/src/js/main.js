@@ -403,7 +403,7 @@ window.stopRecording = () => {
   }
 }
 window.onload = function() {
-  window.startSession();
+  window.startSession()
 };
 
 window.submitText = () => {
