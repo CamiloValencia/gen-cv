@@ -298,7 +298,7 @@ window.startSession = () => {
 
 async function greeting() {
   addToConversationHistory("Hola, soy Megan, bienvenidos a esta feria donde podran conocer los proyectos de CT+I en el Instituto Colombiano del petroleo y energias para la transición. Estoy aqui para responder sus preguntas acerca de nuestra estrategia CT+I o cualquiera de nuestros proyectos. ¿Como puedo ayudarte?", "light")
-
+  console.log("avatar loaded")
   let spokenText = "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'><voice xml:lang='es-CO' xml:gender='Female' name='es-CO-SalomeNeural'>Hola, soy Megan, bienvenidos a esta feria donde podran conocer los proyectos de CT+I en el Instituto Colombiano del petroleo y energias para la transición. Estoy aqui para responder sus preguntas acerca de nuestra estrategia CT+I o cualquiera de nuestros proyectos. ¿Como puedo ayudarte?</voice></speak>"
   avatarSynthesizer.speakSsmlAsync(spokenText, (result) => {
     if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
